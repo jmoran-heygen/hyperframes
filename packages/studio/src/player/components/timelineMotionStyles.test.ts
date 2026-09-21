@@ -79,6 +79,15 @@ describe("timeline motion styles", () => {
     );
     const timelineClipTimecodeRule = expectRule(studioCss, ".timeline-clip__timecode");
     const activeTimelineClipRule = expectRule(studioCss, ".timeline-clip[data-active]");
+    const selectedTimelineClipRule = expectRule(studioCss, ".timeline-clip.is-selected");
+    const activeSelectedTimelineClipRule = expectRule(
+      studioCss,
+      ".timeline-clip[data-active].is-selected",
+    );
+    const selectedDraggingTimelineClipRule = expectRule(
+      studioCss,
+      ".timeline-clip.is-selected.is-dragging",
+    );
     const bloomOverlayRule = expectRule(studioCss, ".timeline-clip::before");
     const activeBloomOverlayRule = expectRule(studioCss, ".timeline-clip[data-active]::before");
 
@@ -92,6 +101,17 @@ describe("timeline motion styles", () => {
     expect(themeCss).toContain("--timeline-clip-label: rgba(255, 255, 255, 0.5)");
     expect(themeCss).toContain("--timeline-clip-timecode: rgba(255, 255, 255, 0.34)");
     expect(themeCss).toContain("--timeline-clip-label-active: #f4fffb");
+    expect(themeCss).toContain("--timeline-clip-selection: rgba(255, 255, 255, 0.85)");
+    expect(selectedTimelineClipRule).toContain(
+      "box-shadow: inset 0 0 0 1.5px var(--timeline-clip-selection)",
+    );
+    expect(activeSelectedTimelineClipRule).toContain(
+      "box-shadow: inset 0 0 0 1.5px var(--timeline-clip-selection)",
+    );
+    expect(selectedDraggingTimelineClipRule).toContain(
+      "inset 0 0 0 1.5px var(--timeline-clip-selection)",
+    );
+    expect(selectedDraggingTimelineClipRule).toContain("0 8px 24px rgba(0, 0, 0, 0.4)");
     expect(activeTimelineClipRule).not.toContain("background: linear-gradient");
     expect(activeTimelineClipRule).toContain("border-color: var(--clip-border-active)");
     expect(activeTimelineClipRule).not.toContain("box-shadow");

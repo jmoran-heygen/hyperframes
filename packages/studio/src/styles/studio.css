@@ -248,11 +248,11 @@ body {
 }
 
 .timeline-clip.is-selected {
-  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 0 1.5px var(--timeline-clip-selection);
 }
 
 .timeline-clip[data-active].is-selected {
-  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 0 1.5px var(--timeline-clip-selection);
 }
 
 .timeline-clip.is-dragging {
@@ -266,7 +266,7 @@ body {
    overridden by .is-dragging's drop shadow, so re-state both together). */
 .timeline-clip.is-selected.is-dragging {
   box-shadow:
-    0 0 0 1.5px rgba(255, 255, 255, 0.85),
+    inset 0 0 0 1.5px var(--timeline-clip-selection),
     0 8px 24px rgba(0, 0, 0, 0.4);
 }
 

@@ -65,6 +65,7 @@
   --timeline-clip-label: rgba(255, 255, 255, 0.5);
   --timeline-clip-timecode: rgba(255, 255, 255, 0.34);
   --timeline-clip-label-active: #f4fffb;
+  --timeline-clip-selection: rgba(255, 255, 255, 0.85);
   --timeline-clip-bg-active: rgba(60, 230, 172, 0.2);
   --timeline-clip-bg-hover: rgba(255, 255, 255, 0.16);
   --timeline-clip-bg-dragging: rgba(38, 42, 52, 0.96);
